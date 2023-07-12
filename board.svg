@@ -1,4 +1,11 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-<path d="M190,100 L145,177.94229 L55,177.94229 L10,100 L55,22.057714 L145,22.057714 z" fill="none" stroke="black" stroke-width="10"/>
-<path d="M100,145 L61.02886,77.5 L138.97115,77.5 z" fill="none" stroke="black" stroke-width="10"/>
+<defs>
+<path d="M190,100 L145,177.94229 L55,177.94229 L10,100 L55,22.057714 L145,22.057714 z" fill="none" id="hexagon" stroke="black" stroke-width="10"/>
+<path d="M100,145 L61.02886,77.5 L138.97115,77.5 z" fill="none" id="triangle" stroke="black" stroke-width="10"/>
+<g id="board_cell">
+<use href="#hexagon"/>
+<use href="#triangle"/>
+</g>
+</defs>
+<use href="#board_cell"/>
 </svg>

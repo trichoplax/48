@@ -1,6 +1,9 @@
 use std::f64::consts::TAU;
 use svg::node::element::path::Data;
+use svg::node::element::Definitions;
+use svg::node::element::Group;
 use svg::node::element::Path;
+use svg::node::element::Use;
 use svg::Document;
 
 fn main() {
@@ -49,18 +52,36 @@ fn main() {
         .set("fill", "none")
         .set("stroke", "black")
         .set("stroke-width", 10)
-        .set("d", hexagon_data);
+        .set("d", hexagon_data)
+        .set("id", "hexagon");
 
     let triangle_path = Path::new()
         .set("fill", "none")
         .set("stroke", "black")
         .set("stroke-width", 10)
-        .set("d", triangle_data);
+        .set("d", triangle_data)
+        .set("id", "triangle");
+
+    let use_hexagon = Use::new().set("href", "#hexagon");
+
+    let use_triangle = Use::new().set("href", "#triangle");
+
+    let board_cell_group = Group::new()
+        .add(use_hexagon)
+        .add(use_triangle)
+        .set("id", "board_cell");
+
+    let definitions = Definitions::new()
+        .add(hexagon_path)
+        .add(triangle_path)
+        .add(board_cell_group);
+
+    let use_board_cell = Use::new().set("href", "#board_cell");
 
     let document = Document::new()
         .set("viewBox", (0, 0, 200, 200))
-        .add(hexagon_path)
-        .add(triangle_path);
+        .add(definitions)
+        .add(use_board_cell);
 
     svg::save("board.svg", &document).unwrap();
 }
