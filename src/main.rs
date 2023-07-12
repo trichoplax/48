@@ -69,10 +69,3 @@ struct Coordinates {
     x: f64,
     y: f64,
 }
-
-impl From<Coordinates> for (f64, f64) {
-    fn from(c: Coordinates) -> (f64, f64) {
-        let Coordinates { x, y } = c;
-        (x, y)
-    }
-}
