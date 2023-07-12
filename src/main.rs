@@ -1,3 +1,4 @@
+use std::f64::consts::TAU;
 use svg::node::element::path::Data;
 use svg::node::element::Path;
 use svg::Document;
@@ -5,7 +6,7 @@ use svg::Document;
 fn main() {
     let centre = Coordinates { x: 100.0, y: 100.0 };
     let hexagon_radius = 90.0;
-    let hexagon_angle = std::f64::consts::TAU / 6.0;
+    let hexagon_angle = TAU / 6.0;
 
     let hexagon_vertices: Vec<(f64, f64)> = (0..=5)
         .map(|n| {
@@ -17,8 +18,8 @@ fn main() {
         .collect();
 
     let triangle_radius = 45.0;
-    let triangle_angle = std::f64::consts::TAU / 3.0;
-    let triangle_rotation = std::f64::consts::TAU / 4.0;
+    let triangle_angle = TAU / 3.0;
+    let triangle_rotation = TAU / 4.0;
 
     let triangle_vertices: Vec<(f64, f64)> = (0..=2)
         .map(|n| {
