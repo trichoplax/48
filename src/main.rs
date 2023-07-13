@@ -82,6 +82,7 @@ fn main() {
         .set("stroke", "black")
         .set("fill", "none")
         .set("stroke-width", stroke_width)
+        .set("rx", stroke_width)
         .set("id", "dice_outline");
 
     let hexagon_with_blank_dice_definition = Group::new()

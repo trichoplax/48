@@ -6,7 +6,7 @@
 <use href="#hexagon"/>
 <use href="#triangle"/>
 </g>
-<rect fill="none" height="30" id="dice_outline" stroke="black" stroke-width="3" width="30" x="85" y="85"/>
+<rect fill="none" height="30" id="dice_outline" rx="3" stroke="black" stroke-width="3" width="30" x="85" y="85"/>
 <g id="hexagon_with_blank_dice">
 <use href="#hexagon"/>
 <use href="#dice_outline"/>
