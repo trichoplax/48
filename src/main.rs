@@ -51,14 +51,14 @@ fn main() {
         .line_to(triangle_vertices[2])
         .close();
 
-    let hexagon_path = Path::new()
+    let hexagon_definition = Path::new()
         .set("fill", "none")
         .set("stroke", "black")
         .set("stroke-width", stroke_width)
         .set("d", hexagon_data)
         .set("id", "hexagon");
 
-    let triangle_path = Path::new()
+    let triangle_definition = Path::new()
         .set("fill", "none")
         .set("stroke", "black")
         .set("stroke-width", stroke_width)
@@ -69,15 +69,15 @@ fn main() {
 
     let triangle = Use::new().set("href", "#triangle");
 
-    let board_cell_group = Group::new()
+    let board_cell_definition = Group::new()
         .add(hexagon)
         .add(triangle)
         .set("id", "board_cell");
 
     let definitions = Definitions::new()
-        .add(hexagon_path)
-        .add(triangle_path)
-        .add(board_cell_group);
+        .add(hexagon_definition)
+        .add(triangle_definition)
+        .add(board_cell_definition);
 
     let board_cell = Use::new().set("href", "#board_cell");
     let board_cell_location_rotation = TAU / 12.0;
