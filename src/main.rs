@@ -6,9 +6,12 @@ use svg::node::element::Path;
 use svg::node::element::Use;
 use svg::Document;
 
+const ROOT_3: f64 = 1.7320508075688772;
+
 fn main() {
     let centre = Coordinates { x: 100.0, y: 100.0 };
-    let hexagon_radius = 90.0;
+    let stroke_width = 3;
+    let hexagon_radius = 30.0;
     let hexagon_angle = TAU / 6.0;
 
     let hexagon_vertices: Vec<(f64, f64)> = (0..=5)
@@ -20,7 +23,7 @@ fn main() {
         })
         .collect();
 
-    let triangle_radius = 45.0;
+    let triangle_radius = hexagon_radius / 2.0;
     let triangle_angle = TAU / 3.0;
     let triangle_rotation = TAU / 4.0;
 
@@ -51,24 +54,24 @@ fn main() {
     let hexagon_path = Path::new()
         .set("fill", "none")
         .set("stroke", "black")
-        .set("stroke-width", 10)
+        .set("stroke-width", stroke_width)
         .set("d", hexagon_data)
         .set("id", "hexagon");
 
     let triangle_path = Path::new()
         .set("fill", "none")
         .set("stroke", "black")
-        .set("stroke-width", 10)
+        .set("stroke-width", stroke_width)
         .set("d", triangle_data)
         .set("id", "triangle");
 
-    let use_hexagon = Use::new().set("href", "#hexagon");
+    let hexagon = Use::new().set("href", "#hexagon");
 
-    let use_triangle = Use::new().set("href", "#triangle");
+    let triangle = Use::new().set("href", "#triangle");
 
     let board_cell_group = Group::new()
-        .add(use_hexagon)
-        .add(use_triangle)
+        .add(hexagon)
+        .add(triangle)
         .set("id", "board_cell");
 
     let definitions = Definitions::new()
@@ -76,12 +79,56 @@ fn main() {
         .add(triangle_path)
         .add(board_cell_group);
 
-    let use_board_cell = Use::new().set("href", "#board_cell");
+    let board_cell = Use::new().set("href", "#board_cell");
+    let board_cell_location_rotation = TAU / 12.0;
+    let direction_hexagon_location_radius = hexagon_radius * ROOT_3;
+
+    let direction_hexagon_coordinates: Vec<Coordinates> = (0..=5)
+        .map(|n| Coordinates {
+            x: centre.x
+                + direction_hexagon_location_radius
+                    * (n as f64 * hexagon_angle + board_cell_location_rotation).cos(),
+            y: centre.y
+                + direction_hexagon_location_radius
+                    * (n as f64 * hexagon_angle + board_cell_location_rotation).sin(),
+        })
+        .collect();
+
+    let direction_hexagon_1 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[0].x - centre.x)
+        .set("y", direction_hexagon_coordinates[0].y - centre.y);
+    let direction_hexagon_2 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[1].x - centre.x)
+        .set("y", direction_hexagon_coordinates[1].y - centre.y);
+    let direction_hexagon_3 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[2].x - centre.x)
+        .set("y", direction_hexagon_coordinates[2].y - centre.y);
+    let direction_hexagon_4 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[3].x - centre.x)
+        .set("y", direction_hexagon_coordinates[3].y - centre.y);
+    let direction_hexagon_5 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[4].x - centre.x)
+        .set("y", direction_hexagon_coordinates[4].y - centre.y);
+    let direction_hexagon_6 = Use::new()
+        .set("href", "#hexagon")
+        .set("x", direction_hexagon_coordinates[5].x - centre.x)
+        .set("y", direction_hexagon_coordinates[5].y - centre.y);
 
     let document = Document::new()
         .set("viewBox", (0, 0, 200, 200))
         .add(definitions)
-        .add(use_board_cell);
+        .add(board_cell)
+        .add(direction_hexagon_1)
+        .add(direction_hexagon_2)
+        .add(direction_hexagon_3)
+        .add(direction_hexagon_4)
+        .add(direction_hexagon_5)
+        .add(direction_hexagon_6);
 
     svg::save("board.svg", &document).unwrap();
 }

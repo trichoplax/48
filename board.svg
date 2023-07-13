@@ -1,11 +1,17 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<path d="M190,100 L145,177.94229 L55,177.94229 L10,100 L55,22.057714 L145,22.057714 z" fill="none" id="hexagon" stroke="black" stroke-width="10"/>
-<path d="M100,145 L61.02886,77.5 L138.97115,77.5 z" fill="none" id="triangle" stroke="black" stroke-width="10"/>
+<path d="M130,100 L115,125.98076 L85,125.98076 L70,100 L85,74.01924 L115,74.01924 z" fill="none" id="hexagon" stroke="black" stroke-width="3"/>
+<path d="M100,115 L87.00962,92.5 L112.99038,92.5 z" fill="none" id="triangle" stroke="black" stroke-width="3"/>
 <g id="board_cell">
 <use href="#hexagon"/>
 <use href="#triangle"/>
 </g>
 </defs>
 <use href="#board_cell"/>
+<use href="#hexagon" x="45" y="25.98076211353316"/>
+<use href="#hexagon" x="0" y="51.96152422706632"/>
+<use href="#hexagon" x="-44.999999999999986" y="25.980762113533174"/>
+<use href="#hexagon" x="-45.00000000000001" y="-25.980762113533146"/>
+<use href="#hexagon" x="-0.000000000000014210854715202004" y="-51.96152422706631"/>
+<use href="#hexagon" x="44.99999999999997" y="-25.980762113533174"/>
 </svg>
