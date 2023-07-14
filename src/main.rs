@@ -1,20 +1,35 @@
 use std::f64::consts::TAU;
 use svg::node::element::path::Data;
+use svg::node::element::Circle;
 use svg::node::element::Definitions;
 use svg::node::element::Group;
 use svg::node::element::Path;
-use svg::node::element::Use;
 use svg::node::element::Rectangle;
-use svg::node::element::Circle;
+use svg::node::element::Use;
 use svg::Document;
 
 const ROOT_3: f64 = 1.7320508075688772;
 
 fn main() {
-    let centre = Coordinates { x: 100.0, y: 100.0 };
-    let stroke_width = 3.0;
-    let hexagon_radius = 30.0;
+    let board_size = 1; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let hexagon_radius = 10.0;
+    let hexagon_height = hexagon_radius * ROOT_3;
+    let stroke_width = 1.0;
+    let image_width =
+        hexagon_radius * (5.0 + 3.0 * board_size as f64) + stroke_width * 2.0 / ROOT_3;
+    let image_height = hexagon_height * (3.0 + 2.0 * board_size as f64) + stroke_width;
+    let centre = Coordinates {
+        x: image_width / 2.0,
+        y: image_height / 2.0,
+    };
+    let dice_width = hexagon_radius;
     let hexagon_angle = TAU / 6.0;
+    let triangle_radius = hexagon_radius / 2.0;
+    let triangle_angle = TAU / 3.0;
+    let triangle_rotation = TAU / 4.0;
+    let pip_radius = stroke_width;
+    let board_cell_location_rotation = TAU / 12.0;
+    let direction_hexagon_location_radius = hexagon_height * (board_size as f64 + 1.0);
 
     let hexagon_vertices: Vec<(f64, f64)> = (0..=5)
         .map(|n| {
@@ -24,10 +39,6 @@ fn main() {
             )
         })
         .collect();
-
-    let triangle_radius = hexagon_radius / 2.0;
-    let triangle_angle = TAU / 3.0;
-    let triangle_rotation = TAU / 4.0;
 
     let triangle_vertices: Vec<(f64, f64)> = (0..=2)
         .map(|n| {
@@ -61,9 +72,8 @@ fn main() {
         .set("id", "hexagon");
 
     let triangle_definition = Path::new()
-        .set("fill", "none")
-        .set("stroke", "black")
-        .set("stroke-width", stroke_width)
+        .set("fill", "black")
+        .set("stroke", "none")
         .set("d", triangle_data)
         .set("id", "triangle");
 
@@ -71,8 +81,6 @@ fn main() {
         .add(Use::new().set("href", "#hexagon"))
         .add(Use::new().set("href", "#triangle"))
         .set("id", "board_cell");
-
-    let dice_width = hexagon_radius;
 
     let dice_outline_definition = Rectangle::new()
         .set("x", centre.x - dice_width / 2.0)
@@ -90,8 +98,6 @@ fn main() {
         .add(Use::new().set("href", "#dice_outline"))
         .set("id", "hexagon_with_blank_dice");
 
-    let pip_radius = stroke_width;
-
     let pip_definition = Circle::new()
         .set("r", pip_radius)
         .set("cx", centre.x)
@@ -100,9 +106,7 @@ fn main() {
         .set("stroke", "none")
         .set("id", "pip");
 
-    let centre_pip_definition = Use::new()
-        .set("href", "#pip")
-        .set("id", "centre_pip");
+    let centre_pip_definition = Use::new().set("href", "#pip").set("id", "centre_pip");
 
     let top_left_pip_definition = Use::new()
         .set("href", "#pip")
@@ -234,50 +238,118 @@ fn main() {
         .add(direction_hexagon_5_definition)
         .add(direction_hexagon_6_definition);
 
-    let board_cell = Use::new().set("href", "#board_cell");
-    let board_cell_location_rotation = TAU / 12.0;
-    let direction_hexagon_location_radius = hexagon_radius * ROOT_3;
+    let board_cell_0_0_0 = Use::new().set("href", "#board_cell");
+    let board_cell_1_1_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (0.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (0.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
+    let board_cell_1_2_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (1.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (1.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
+    let board_cell_1_3_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (2.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (2.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
+    let board_cell_1_4_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (3.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (3.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
+    let board_cell_1_5_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (4.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (4.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
+    let board_cell_1_6_0 = Use::new()
+        .set("href", "#board_cell")
+        .set(
+            "x",
+            hexagon_height * (5.0 * hexagon_angle + board_cell_location_rotation).cos(),
+        )
+        .set(
+            "y",
+            hexagon_height * (5.0 * hexagon_angle + board_cell_location_rotation).sin(),
+        );
 
     let direction_hexagon_coordinates: Vec<Coordinates> = (0..=5)
         .map(|n| Coordinates {
-            x: centre.x
-                + direction_hexagon_location_radius
-                    * (n as f64 * hexagon_angle + board_cell_location_rotation).cos(),
-            y: centre.y
-                + direction_hexagon_location_radius
-                    * (n as f64 * hexagon_angle + board_cell_location_rotation).sin(),
+            x: direction_hexagon_location_radius
+                * (n as f64 * hexagon_angle + board_cell_location_rotation).cos(),
+            y: direction_hexagon_location_radius
+                * (n as f64 * hexagon_angle + board_cell_location_rotation).sin(),
         })
         .collect();
 
     let direction_hexagon_1 = Use::new()
         .set("href", "#direction_hexagon_1")
-        .set("x", direction_hexagon_coordinates[0].x - centre.x)
-        .set("y", direction_hexagon_coordinates[0].y - centre.y);
+        .set("x", direction_hexagon_coordinates[0].x)
+        .set("y", direction_hexagon_coordinates[0].y);
     let direction_hexagon_2 = Use::new()
         .set("href", "#direction_hexagon_2")
-        .set("x", direction_hexagon_coordinates[1].x - centre.x)
-        .set("y", direction_hexagon_coordinates[1].y - centre.y);
+        .set("x", direction_hexagon_coordinates[1].x)
+        .set("y", direction_hexagon_coordinates[1].y);
     let direction_hexagon_3 = Use::new()
         .set("href", "#direction_hexagon_3")
-        .set("x", direction_hexagon_coordinates[2].x - centre.x)
-        .set("y", direction_hexagon_coordinates[2].y - centre.y);
+        .set("x", direction_hexagon_coordinates[2].x)
+        .set("y", direction_hexagon_coordinates[2].y);
     let direction_hexagon_4 = Use::new()
         .set("href", "#direction_hexagon_4")
-        .set("x", direction_hexagon_coordinates[3].x - centre.x)
-        .set("y", direction_hexagon_coordinates[3].y - centre.y);
+        .set("x", direction_hexagon_coordinates[3].x)
+        .set("y", direction_hexagon_coordinates[3].y);
     let direction_hexagon_5 = Use::new()
         .set("href", "#direction_hexagon_5")
-        .set("x", direction_hexagon_coordinates[4].x - centre.x)
-        .set("y", direction_hexagon_coordinates[4].y - centre.y);
+        .set("x", direction_hexagon_coordinates[4].x)
+        .set("y", direction_hexagon_coordinates[4].y);
     let direction_hexagon_6 = Use::new()
         .set("href", "#direction_hexagon_6")
-        .set("x", direction_hexagon_coordinates[5].x - centre.x)
-        .set("y", direction_hexagon_coordinates[5].y - centre.y);
+        .set("x", direction_hexagon_coordinates[5].x)
+        .set("y", direction_hexagon_coordinates[5].y);
 
     let document = Document::new()
-        .set("viewBox", (0, 0, 200, 200))
+        .set("viewBox", (0, 0, image_width, image_height))
         .add(definitions)
-        .add(board_cell)
+        .add(
+            Rectangle::new()
+                .set("width", image_width)
+                .set("height", image_height)
+                .set("fill", "none"),
+        )
+        .add(board_cell_0_0_0)
+        .add(board_cell_1_1_0)
+        .add(board_cell_1_2_0)
+        .add(board_cell_1_3_0)
+        .add(board_cell_1_4_0)
+        .add(board_cell_1_5_0)
+        .add(board_cell_1_6_0)
         .add(direction_hexagon_1)
         .add(direction_hexagon_2)
         .add(direction_hexagon_3)

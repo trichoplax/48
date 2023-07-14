@@ -1,24 +1,24 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 81.15470053837925 87.60254037844385" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<path d="M130,100 L115,125.98076 L85,125.98076 L70,100 L85,74.01924 L115,74.01924 z" fill="none" id="hexagon" stroke="black" stroke-width="3"/>
-<path d="M100,115 L87.00962,92.5 L112.99038,92.5 z" fill="none" id="triangle" stroke="black" stroke-width="3"/>
+<path d="M50.57735,43.80127 L45.57735,52.461525 L35.57735,52.461525 L30.57735,43.80127 L35.57735,35.141018 L45.57735,35.141018 z" fill="none" id="hexagon" stroke="black" stroke-width="1"/>
+<path d="M40.57735,48.80127 L36.247223,41.30127 L44.90748,41.30127 z" fill="black" id="triangle" stroke="none"/>
 <g id="board_cell">
 <use href="#hexagon"/>
 <use href="#triangle"/>
 </g>
-<rect fill="none" height="30" id="dice_outline" rx="3" stroke="black" stroke-width="3" width="30" x="85" y="85"/>
+<rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="35.57735026918962" y="38.801270189221924"/>
 <g id="hexagon_with_blank_dice">
 <use href="#hexagon"/>
 <use href="#dice_outline"/>
 </g>
-<circle cx="100" cy="100" fill="black" id="pip" r="3" stroke="none"/>
+<circle cx="40.57735026918962" cy="43.801270189221924" fill="black" id="pip" r="1" stroke="none"/>
 <use href="#pip" id="centre_pip"/>
-<use href="#pip" id="top_left_pip" x="-7.5" y="-7.5"/>
-<use href="#pip" id="top_right_pip" x="7.5" y="-7.5"/>
-<use href="#pip" id="bottom_left_pip" x="-7.5" y="7.5"/>
-<use href="#pip" id="bottom_right_pip" x="7.5" y="7.5"/>
-<use href="#pip" id="centre_left_pip" x="-7.5"/>
-<use href="#pip" id="centre_right_pip" x="7.5"/>
+<use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+<use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+<use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+<use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+<use href="#pip" id="centre_left_pip" x="-2.5"/>
+<use href="#pip" id="centre_right_pip" x="2.5"/>
 <g id="dice_pips_1">
 <use href="#centre_pip"/>
 </g>
@@ -77,11 +77,18 @@
 <use href="#dice_pips_6"/>
 </g>
 </defs>
+<rect fill="none" height="87.60254037844385" width="81.15470053837925"/>
 <use href="#board_cell"/>
-<use href="#direction_hexagon_1" x="45" y="25.98076211353316"/>
-<use href="#direction_hexagon_2" x="0" y="51.96152422706632"/>
-<use href="#direction_hexagon_3" x="-44.999999999999986" y="25.980762113533174"/>
-<use href="#direction_hexagon_4" x="-45.00000000000001" y="-25.980762113533146"/>
-<use href="#direction_hexagon_5" x="-0.000000000000014210854715202004" y="-51.96152422706631"/>
-<use href="#direction_hexagon_6" x="44.99999999999997" y="-25.980762113533174"/>
+<use href="#board_cell" x="15" y="8.660254037844384"/>
+<use href="#board_cell" x="0.0000000000000010605752387249068" y="17.32050807568877"/>
+<use href="#board_cell" x="-14.999999999999996" y="8.66025403784439"/>
+<use href="#board_cell" x="-15.000000000000002" y="-8.66025403784438"/>
+<use href="#board_cell" x="-0.00000000000000318172571617472" y="-17.32050807568877"/>
+<use href="#board_cell" x="14.999999999999993" y="-8.660254037844393"/>
+<use href="#direction_hexagon_1" x="30" y="17.320508075688767"/>
+<use href="#direction_hexagon_2" x="0.0000000000000021211504774498135" y="34.64101615137754"/>
+<use href="#direction_hexagon_3" x="-29.999999999999993" y="17.32050807568878"/>
+<use href="#direction_hexagon_4" x="-30.000000000000004" y="-17.32050807568876"/>
+<use href="#direction_hexagon_5" x="-0.00000000000000636345143234944" y="-34.64101615137754"/>
+<use href="#direction_hexagon_6" x="29.999999999999986" y="-17.320508075688785"/>
 </svg>
