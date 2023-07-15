@@ -12,6 +12,7 @@ const ROOT_3: f64 = 1.7320508075688772;
 
 fn main() {
     let board_size = 4; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let triangles_included = true;
     let hexagon_radius = 10.0;
     let hexagon_height = hexagon_radius * ROOT_3;
     let stroke_width = 1.0;
@@ -160,10 +161,13 @@ fn main() {
         .set("d", triangle_data)
         .set("id", "triangle");
 
-    let board_cell_definition = Group::new()
+    let mut board_cell_definition = Group::new()
         .add(Use::new().set("href", "#hexagon"))
-        .add(Use::new().set("href", "#triangle"))
         .set("id", "board_cell");
+
+    if triangles_included {
+        board_cell_definition = board_cell_definition.add(Use::new().set("href", "#triangle"))
+    }
 
     let dice_outline_definition = Rectangle::new()
         .set("x", centre.x - dice_width / 2.0)
