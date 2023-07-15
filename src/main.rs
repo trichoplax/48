@@ -11,7 +11,7 @@ use svg::Document;
 const ROOT_3: f64 = 1.7320508075688772;
 
 fn main() {
-    let board_size = 1; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let board_size = 4; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
     let hexagon_radius = 10.0;
     let hexagon_height = hexagon_radius * ROOT_3;
     let stroke_width = 1.0;
@@ -288,68 +288,6 @@ fn main() {
         .add(direction_hexagon_5_definition)
         .add(direction_hexagon_6_definition);
 
-    let board_cell_0_0_0 = Use::new().set("href", "#board_cell");
-    let board_cell_1_1_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (0.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (0.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-    let board_cell_1_2_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (1.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (1.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-    let board_cell_1_3_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (2.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (2.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-    let board_cell_1_4_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (3.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (3.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-    let board_cell_1_5_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (4.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (4.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-    let board_cell_1_6_0 = Use::new()
-        .set("href", "#board_cell")
-        .set(
-            "x",
-            hexagon_height * (5.0 * hexagon_angle + board_cell_location_rotation).cos(),
-        )
-        .set(
-            "y",
-            hexagon_height * (5.0 * hexagon_angle + board_cell_location_rotation).sin(),
-        );
-
     let direction_hexagon_coordinates: Vec<Coordinates> = (0..=5)
         .map(|n| Coordinates {
             x: direction_hexagon_location_radius
@@ -384,7 +322,7 @@ fn main() {
         .set("x", direction_hexagon_coordinates[5].x)
         .set("y", direction_hexagon_coordinates[5].y);
 
-    let document = Document::new()
+    let mut document = Document::new()
         .set("viewBox", (0, 0, image_width, image_height))
         .add(definitions)
         .add(
@@ -393,19 +331,41 @@ fn main() {
                 .set("height", image_height)
                 .set("fill", "none"),
         )
-        .add(board_cell_0_0_0)
-        .add(board_cell_1_1_0)
-        .add(board_cell_1_2_0)
-        .add(board_cell_1_3_0)
-        .add(board_cell_1_4_0)
-        .add(board_cell_1_5_0)
-        .add(board_cell_1_6_0)
         .add(direction_hexagon_1)
         .add(direction_hexagon_2)
         .add(direction_hexagon_3)
         .add(direction_hexagon_4)
         .add(direction_hexagon_5)
         .add(direction_hexagon_6);
+
+    for ring in 0..=board_size {
+        if ring == 0 {
+            document = document.add(Use::new().set("href", "#board_cell"));
+        } else {
+            for spoke in 0..=5 {
+                for offset in 0..ring {
+                    let spoke_angle = spoke as f64 * hexagon_angle + board_cell_location_rotation;
+                    let ring_radius = ring as f64 * hexagon_height;
+                    let offset_angle = spoke_angle + 2.0 * hexagon_angle;
+                    let offset_distance = offset as f64 * hexagon_height;
+                    document = document.add(
+                        Use::new()
+                            .set("href", "#board_cell")
+                            .set(
+                                "x",
+                                ring_radius * (spoke_angle).cos()
+                                    + offset_distance * offset_angle.cos(),
+                            )
+                            .set(
+                                "y",
+                                ring_radius * (spoke_angle).sin()
+                                    + offset_distance * offset_angle.sin(),
+                            ),
+                    );
+                }
+            }
+        }
+    }
 
     svg::save("docs/board.svg", &document).unwrap();
 }
