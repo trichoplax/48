@@ -24,12 +24,14 @@ fn main() {
     };
     let dice_width = hexagon_radius;
     let hexagon_angle = TAU / 6.0;
+    let hexagon_angle_in_degrees = hexagon_angle * 360.0 / TAU;
     let triangle_radius = hexagon_radius / 2.0;
     let triangle_angle = TAU / 3.0;
     let triangle_rotation = TAU / 4.0;
     let pip_radius = stroke_width;
     let board_cell_location_rotation = TAU / 12.0;
     let direction_hexagon_location_radius = hexagon_height * (board_size as f64 + 1.0);
+    let direction_hexagon_location_rotation = 5.0 * hexagon_angle + board_cell_location_rotation;
 
     let hexagon_vertices: Vec<(f64, f64)> = (0..=5)
         .map(|n| {
@@ -93,11 +95,6 @@ fn main() {
         .set("rx", stroke_width)
         .set("id", "dice_outline");
 
-    let hexagon_with_blank_dice_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon"))
-        .add(Use::new().set("href", "#dice_outline"))
-        .set("id", "hexagon_with_blank_dice");
-
     let pip_definition = Circle::new()
         .set("r", pip_radius)
         .set("cx", centre.x)
@@ -142,73 +139,127 @@ fn main() {
         .set("x", dice_width / 4.0)
         .set("id", "centre_right_pip");
 
-    let dice_pips_1_definition = Group::new()
+    let dice_with_pips_1_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#centre_pip"))
-        .set("id", "dice_pips_1");
+        .set("id", "dice_with_pips_1");
 
-    let dice_pips_2_definition = Group::new()
+    let dice_with_pips_2_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#top_left_pip"))
         .add(Use::new().set("href", "#bottom_right_pip"))
-        .set("id", "dice_pips_2");
+        .set("id", "dice_with_pips_2");
 
-    let dice_pips_3_definition = Group::new()
+    let dice_with_pips_3_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#top_left_pip"))
         .add(Use::new().set("href", "#centre_pip"))
         .add(Use::new().set("href", "#bottom_right_pip"))
-        .set("id", "dice_pips_3");
+        .set("id", "dice_with_pips_3");
 
-    let dice_pips_4_definition = Group::new()
+    let dice_with_pips_4_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#top_left_pip"))
         .add(Use::new().set("href", "#top_right_pip"))
         .add(Use::new().set("href", "#bottom_left_pip"))
         .add(Use::new().set("href", "#bottom_right_pip"))
-        .set("id", "dice_pips_4");
+        .set("id", "dice_with_pips_4");
 
-    let dice_pips_5_definition = Group::new()
+    let dice_with_pips_5_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#centre_pip"))
         .add(Use::new().set("href", "#top_left_pip"))
         .add(Use::new().set("href", "#top_right_pip"))
         .add(Use::new().set("href", "#bottom_left_pip"))
         .add(Use::new().set("href", "#bottom_right_pip"))
-        .set("id", "dice_pips_5");
+        .set("id", "dice_with_pips_5");
 
-    let dice_pips_6_definition = Group::new()
+    let dice_with_pips_6_definition = Group::new()
+        .add(Use::new().set("href", "#dice_outline"))
         .add(Use::new().set("href", "#top_left_pip"))
         .add(Use::new().set("href", "#top_right_pip"))
         .add(Use::new().set("href", "#bottom_left_pip"))
         .add(Use::new().set("href", "#bottom_right_pip"))
         .add(Use::new().set("href", "#centre_left_pip"))
         .add(Use::new().set("href", "#centre_right_pip"))
-        .set("id", "dice_pips_6");
+        .set("id", "dice_with_pips_6");
 
     let direction_hexagon_1_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_1"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_1").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 1.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_1");
 
     let direction_hexagon_2_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_2"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_2").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 2.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_2");
 
     let direction_hexagon_3_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_3"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_3").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 3.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_3");
 
     let direction_hexagon_4_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_4"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_4").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 4.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_4");
 
     let direction_hexagon_5_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_5"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_5").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 5.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_5");
 
     let direction_hexagon_6_definition = Group::new()
-        .add(Use::new().set("href", "#hexagon_with_blank_dice"))
-        .add(Use::new().set("href", "#dice_pips_6"))
+        .add(Use::new().set("href", "#hexagon"))
+        .add(Use::new().set("href", "#dice_with_pips_6").set(
+            "transform",
+            format!(
+                "rotate({},{},{})",
+                hexagon_angle_in_degrees * 6.0,
+                centre.x,
+                centre.y
+            ),
+        ))
         .set("id", "direction_hexagon_6");
 
     let definitions = Definitions::new()
@@ -216,7 +267,6 @@ fn main() {
         .add(triangle_definition)
         .add(board_cell_definition)
         .add(dice_outline_definition)
-        .add(hexagon_with_blank_dice_definition)
         .add(pip_definition)
         .add(centre_pip_definition)
         .add(top_left_pip_definition)
@@ -225,12 +275,12 @@ fn main() {
         .add(bottom_right_pip_definition)
         .add(centre_left_pip_definition)
         .add(centre_right_pip_definition)
-        .add(dice_pips_1_definition)
-        .add(dice_pips_2_definition)
-        .add(dice_pips_3_definition)
-        .add(dice_pips_4_definition)
-        .add(dice_pips_5_definition)
-        .add(dice_pips_6_definition)
+        .add(dice_with_pips_1_definition)
+        .add(dice_with_pips_2_definition)
+        .add(dice_with_pips_3_definition)
+        .add(dice_with_pips_4_definition)
+        .add(dice_with_pips_5_definition)
+        .add(dice_with_pips_6_definition)
         .add(direction_hexagon_1_definition)
         .add(direction_hexagon_2_definition)
         .add(direction_hexagon_3_definition)
@@ -303,9 +353,9 @@ fn main() {
     let direction_hexagon_coordinates: Vec<Coordinates> = (0..=5)
         .map(|n| Coordinates {
             x: direction_hexagon_location_radius
-                * (n as f64 * hexagon_angle + board_cell_location_rotation).cos(),
+                * (n as f64 * hexagon_angle + direction_hexagon_location_rotation).cos(),
             y: direction_hexagon_location_radius
-                * (n as f64 * hexagon_angle + board_cell_location_rotation).sin(),
+                * (n as f64 * hexagon_angle + direction_hexagon_location_rotation).sin(),
         })
         .collect();
 
@@ -357,7 +407,7 @@ fn main() {
         .add(direction_hexagon_5)
         .add(direction_hexagon_6);
 
-    svg::save("board.svg", &document).unwrap();
+    svg::save("docs/board.svg", &document).unwrap();
 }
 
 struct Coordinates {
