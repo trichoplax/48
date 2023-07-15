@@ -15,6 +15,8 @@ fn main() {
     let hexagon_radius = 10.0;
     let hexagon_height = hexagon_radius * ROOT_3;
     let stroke_width = 1.0;
+    let hexagon_rounded_corner_radius = stroke_width * 1.5;
+    let dice_rounded_corner_radius = stroke_width * 1.0;
     let image_width =
         hexagon_radius * (5.0 + 3.0 * board_size as f64) + stroke_width * 2.0 / ROOT_3;
     let image_height = hexagon_height * (3.0 + 2.0 * board_size as f64) + stroke_width;
@@ -33,11 +35,36 @@ fn main() {
     let direction_hexagon_location_radius = hexagon_height * (board_size as f64 + 1.0);
     let direction_hexagon_location_rotation = 5.0 * hexagon_angle + board_cell_location_rotation;
 
-    let hexagon_vertices: Vec<(f64, f64)> = (0..=5)
+    let hexagon_straight_line_endpoints: Vec<(f64, f64)> = (0..=5)
         .map(|n| {
             (
-                centre.x + hexagon_radius * (n as f64 * hexagon_angle).cos(),
-                centre.y + hexagon_radius * (n as f64 * hexagon_angle).sin(),
+                centre.x
+                    + hexagon_radius * (n as f64 * hexagon_angle).cos()
+                    + hexagon_rounded_corner_radius
+                        * hexagon_angle.cos()
+                        * ((n as f64 + 4.0) * hexagon_angle).cos(),
+                centre.y
+                    + hexagon_radius * (n as f64 * hexagon_angle).sin()
+                    + hexagon_rounded_corner_radius
+                        * hexagon_angle.cos()
+                        * ((n as f64 + 4.0) * hexagon_angle).sin(),
+            )
+        })
+        .collect();
+
+    let hexagon_rounded_corner_endpoints: Vec<(f64, f64)> = (0..=5)
+        .map(|n| {
+            (
+                centre.x
+                    + hexagon_radius * (n as f64 * hexagon_angle).cos()
+                    + hexagon_rounded_corner_radius
+                        * hexagon_angle.cos()
+                        * ((n as f64 + 2.0) * hexagon_angle).cos(),
+                centre.y
+                    + hexagon_radius * (n as f64 * hexagon_angle).sin()
+                    + hexagon_rounded_corner_radius
+                        * hexagon_angle.cos()
+                        * ((n as f64 + 2.0) * hexagon_angle).sin(),
             )
         })
         .collect();
@@ -52,12 +79,66 @@ fn main() {
         .collect();
 
     let hexagon_data = Data::new()
-        .move_to(hexagon_vertices[0])
-        .line_to(hexagon_vertices[1])
-        .line_to(hexagon_vertices[2])
-        .line_to(hexagon_vertices[3])
-        .line_to(hexagon_vertices[4])
-        .line_to(hexagon_vertices[5])
+        .move_to(hexagon_straight_line_endpoints[0])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[0].0,
+            hexagon_rounded_corner_endpoints[0].1,
+        ))
+        .line_to(hexagon_straight_line_endpoints[1])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[1].0,
+            hexagon_rounded_corner_endpoints[1].1,
+        ))
+        .line_to(hexagon_straight_line_endpoints[2])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[2].0,
+            hexagon_rounded_corner_endpoints[2].1,
+        ))
+        .line_to(hexagon_straight_line_endpoints[3])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[3].0,
+            hexagon_rounded_corner_endpoints[3].1,
+        ))
+        .line_to(hexagon_straight_line_endpoints[4])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[4].0,
+            hexagon_rounded_corner_endpoints[4].1,
+        ))
+        .line_to(hexagon_straight_line_endpoints[5])
+        .elliptical_arc_to((
+            hexagon_rounded_corner_radius,
+            hexagon_rounded_corner_radius,
+            0,
+            0,
+            1,
+            hexagon_rounded_corner_endpoints[5].0,
+            hexagon_rounded_corner_endpoints[5].1,
+        ))
         .close();
 
     let triangle_data = Data::new()
@@ -92,7 +173,7 @@ fn main() {
         .set("stroke", "black")
         .set("fill", "none")
         .set("stroke-width", stroke_width)
-        .set("rx", stroke_width)
+        .set("rx", dice_rounded_corner_radius)
         .set("id", "dice_outline");
 
     let pip_definition = Circle::new()
