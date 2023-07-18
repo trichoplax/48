@@ -1,0 +1,217 @@
+<svg viewBox="0 0 114.31535329954589 164.54482671904336" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path d="M125.20235,129.75429 A1.5,1.5,0,0,1,125.20235,131.05333 L120.95235,138.41455 A1.5,1.5,0,0,1,119.82735,139.06407 L111.32735,139.06407 A1.5,1.5,0,0,1,110.20235,138.41455 L105.95235,131.05333 A1.5,1.5,0,0,1,105.95235,129.75429 L110.20235,122.393074 A1.5,1.5,0,0,1,111.32735,121.74355 L119.82735,121.74355 A1.5,1.5,0,0,1,120.95235,122.393074 z" fill="none" id="hexagon" stroke="black" stroke-width="1"/>
+<path d="M115.57735,135.40381 L111.24722,127.90381 L119.90748,127.90381 z" fill="black" id="triangle" stroke="none"/>
+<path d="M115.57735,135.25381 L111.37713,127.97881 L119.77757,127.97881 z" fill="white" id="triangle_hollow_interior" stroke="none"/>
+<g id="board_cell">
+<use href="#hexagon"/>
+<use href="#triangle"/>
+</g>
+<rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="110.57735026918962" y="125.40381056766577"/>
+<circle cx="115.57735026918962" cy="130.40381056766577" fill="black" id="pip" r="1" stroke="none"/>
+<use href="#pip" id="centre_pip"/>
+<use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+<use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+<use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+<use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+<use href="#pip" id="centre_left_pip" x="-2.5"/>
+<use href="#pip" id="centre_right_pip" x="2.5"/>
+<g id="dice_with_pips_1">
+<use href="#dice_outline"/>
+<use href="#centre_pip"/>
+</g>
+<g id="dice_with_pips_2">
+<use href="#dice_outline"/>
+<use href="#top_left_pip"/>
+<use href="#bottom_right_pip"/>
+</g>
+<g id="dice_with_pips_3">
+<use href="#dice_outline"/>
+<use href="#top_left_pip"/>
+<use href="#centre_pip"/>
+<use href="#bottom_right_pip"/>
+</g>
+<g id="dice_with_pips_4">
+<use href="#dice_outline"/>
+<use href="#top_left_pip"/>
+<use href="#top_right_pip"/>
+<use href="#bottom_left_pip"/>
+<use href="#bottom_right_pip"/>
+</g>
+<g id="dice_with_pips_5">
+<use href="#dice_outline"/>
+<use href="#centre_pip"/>
+<use href="#top_left_pip"/>
+<use href="#top_right_pip"/>
+<use href="#bottom_left_pip"/>
+<use href="#bottom_right_pip"/>
+</g>
+<g id="dice_with_pips_6">
+<use href="#dice_outline"/>
+<use href="#top_left_pip"/>
+<use href="#top_right_pip"/>
+<use href="#bottom_left_pip"/>
+<use href="#bottom_right_pip"/>
+<use href="#centre_left_pip"/>
+<use href="#centre_right_pip"/>
+</g>
+<g id="direction_hexagon_1">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_1" transform="rotate(59.99999999999999,115.57735026918962,130.40381056766577)"/>
+</g>
+<g id="direction_hexagon_2">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_2" transform="rotate(119.99999999999999,115.57735026918962,130.40381056766577)"/>
+</g>
+<g id="direction_hexagon_3">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_3" transform="rotate(179.99999999999997,115.57735026918962,130.40381056766577)"/>
+</g>
+<g id="direction_hexagon_4">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_4" transform="rotate(239.99999999999997,115.57735026918962,130.40381056766577)"/>
+</g>
+<g id="direction_hexagon_5">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_5" transform="rotate(299.99999999999994,115.57735026918962,130.40381056766577)"/>
+</g>
+<g id="direction_hexagon_6">
+<use href="#hexagon"/>
+<use href="#dice_with_pips_6" transform="rotate(359.99999999999994,115.57735026918962,130.40381056766577)"/>
+</g>
+</defs>
+<rect fill="none" height="260.80762113533154" width="231.15470053837925"/>
+<use href="#direction_hexagon_1" x="104.99999999999996" y="-60.62177826491076"/>
+<use href="#direction_hexagon_2" x="105.00000000000004" y="60.62177826491062"/>
+<use href="#direction_hexagon_3" x="0.00000000000003712013335537174" y="121.2435565298214"/>
+<use href="#direction_hexagon_4" x="-105.00000000000001" y="60.621778264910674"/>
+<use href="#direction_hexagon_5" x="-105.00000000000006" y="-60.6217782649106"/>
+<use href="#direction_hexagon_6" x="-0.0000000000002673400075724796" y="-121.2435565298214"/>
+<use href="#board_cell"/>
+<use href="#board_cell" x="15" y="8.660254037844384"/>
+<use href="#board_cell" x="0.0000000000000010605752387249068" y="17.32050807568877"/>
+<use href="#board_cell" x="-14.999999999999996" y="8.66025403784439"/>
+<use href="#board_cell" x="-15.000000000000002" y="-8.66025403784438"/>
+<use href="#board_cell" x="-0.00000000000000318172571617472" y="-17.32050807568877"/>
+<use href="#board_cell" x="14.999999999999993" y="-8.660254037844393"/>
+<use href="#board_cell" x="30" y="17.320508075688767"/>
+<use href="#board_cell" x="15.000000000000004" y="25.98076211353316"/>
+<use href="#board_cell" x="0.0000000000000021211504774498135" y="34.64101615137754"/>
+<use href="#board_cell" x="-15" y="25.98076211353316"/>
+<use href="#board_cell" x="-29.999999999999993" y="17.32050807568878"/>
+<use href="#board_cell" x="-29.999999999999996" y="0.000000000000010658141036401503"/>
+<use href="#board_cell" x="-30.000000000000004" y="-17.32050807568876"/>
+<use href="#board_cell" x="-15.00000000000001" y="-25.980762113533153"/>
+<use href="#board_cell" x="-0.00000000000000636345143234944" y="-34.64101615137754"/>
+<use href="#board_cell" x="14.999999999999998" y="-25.980762113533167"/>
+<use href="#board_cell" x="29.999999999999986" y="-17.320508075688785"/>
+<use href="#board_cell" x="29.99999999999999" y="-0.000000000000014210854715202004"/>
+<use href="#board_cell" x="45" y="25.980762113533153"/>
+<use href="#board_cell" x="30.000000000000004" y="34.64101615137754"/>
+<use href="#board_cell" x="15.000000000000007" y="43.30127018922194"/>
+<use href="#board_cell" x="0.0000000000000031817257161747205" y="51.96152422706631"/>
+<use href="#board_cell" x="-14.999999999999998" y="43.30127018922193"/>
+<use href="#board_cell" x="-30" y="34.641016151377556"/>
+<use href="#board_cell" x="-44.999999999999986" y="25.980762113533174"/>
+<use href="#board_cell" x="-44.999999999999986" y="8.660254037844403"/>
+<use href="#board_cell" x="-44.99999999999999" y="-8.660254037844368"/>
+<use href="#board_cell" x="-45.00000000000001" y="-25.980762113533142"/>
+<use href="#board_cell" x="-30.000000000000014" y="-34.641016151377535"/>
+<use href="#board_cell" x="-15.000000000000021" y="-43.301270189221924"/>
+<use href="#board_cell" x="-0.000000000000009545177148524161" y="-51.96152422706631"/>
+<use href="#board_cell" x="14.999999999999996" y="-43.30127018922194"/>
+<use href="#board_cell" x="30" y="-34.64101615137757"/>
+<use href="#board_cell" x="44.99999999999998" y="-25.980762113533178"/>
+<use href="#board_cell" x="44.999999999999986" y="-8.660254037844407"/>
+<use href="#board_cell" x="44.999999999999986" y="8.660254037844364"/>
+<use href="#board_cell" x="60" y="34.641016151377535"/>
+<use href="#board_cell" x="45" y="43.301270189221924"/>
+<use href="#board_cell" x="30.000000000000007" y="51.96152422706632"/>
+<use href="#board_cell" x="15.000000000000014" y="60.62177826491071"/>
+<use href="#board_cell" x="0.000000000000004242300954899627" y="69.28203230275508"/>
+<use href="#board_cell" x="-14.999999999999998" y="60.6217782649107"/>
+<use href="#board_cell" x="-30" y="51.96152422706632"/>
+<use href="#board_cell" x="-45" y="43.30127018922194"/>
+<use href="#board_cell" x="-59.999999999999986" y="34.64101615137756"/>
+<use href="#board_cell" x="-59.999999999999986" y="17.320508075688792"/>
+<use href="#board_cell" x="-59.99999999999999" y="0.000000000000021316282072803006"/>
+<use href="#board_cell" x="-59.99999999999999" y="-17.32050807568875"/>
+<use href="#board_cell" x="-60.00000000000001" y="-34.64101615137752"/>
+<use href="#board_cell" x="-45.000000000000014" y="-43.30127018922191"/>
+<use href="#board_cell" x="-30.00000000000002" y="-51.961524227066306"/>
+<use href="#board_cell" x="-15.000000000000028" y="-60.6217782649107"/>
+<use href="#board_cell" x="-0.00000000000001272690286469888" y="-69.28203230275508"/>
+<use href="#board_cell" x="14.999999999999993" y="-60.62177826491071"/>
+<use href="#board_cell" x="29.999999999999996" y="-51.961524227066334"/>
+<use href="#board_cell" x="45" y="-43.30127018922197"/>
+<use href="#board_cell" x="59.99999999999997" y="-34.64101615137757"/>
+<use href="#board_cell" x="59.99999999999998" y="-17.3205080756888"/>
+<use href="#board_cell" x="59.99999999999998" y="-0.00000000000002842170943040401"/>
+<use href="#board_cell" x="59.999999999999986" y="17.320508075688743"/>
+<use href="#board_cell" x="74.99999999999999" y="43.30127018922192"/>
+<use href="#board_cell" x="59.999999999999986" y="51.961524227066306"/>
+<use href="#board_cell" x="44.99999999999999" y="60.6217782649107"/>
+<use href="#board_cell" x="30" y="69.28203230275508"/>
+<use href="#board_cell" x="15" y="77.94228634059948"/>
+<use href="#board_cell" x="0.000000000000005302876193624533" y="86.60254037844385"/>
+<use href="#board_cell" x="-14.999999999999996" y="77.94228634059947"/>
+<use href="#board_cell" x="-30" y="69.28203230275508"/>
+<use href="#board_cell" x="-45" y="60.6217782649107"/>
+<use href="#board_cell" x="-60" y="51.96152422706633"/>
+<use href="#board_cell" x="-74.99999999999997" y="43.30127018922195"/>
+<use href="#board_cell" x="-74.99999999999997" y="25.98076211353318"/>
+<use href="#board_cell" x="-74.99999999999997" y="8.66025403784441"/>
+<use href="#board_cell" x="-74.99999999999999" y="-8.66025403784436"/>
+<use href="#board_cell" x="-74.99999999999999" y="-25.98076211353313"/>
+<use href="#board_cell" x="-75" y="-43.3012701892219"/>
+<use href="#board_cell" x="-60.00000000000001" y="-51.96152422706629"/>
+<use href="#board_cell" x="-45.000000000000014" y="-60.62177826491069"/>
+<use href="#board_cell" x="-30.00000000000002" y="-69.28203230275508"/>
+<use href="#board_cell" x="-15.000000000000028" y="-77.94228634059948"/>
+<use href="#board_cell" x="-0.0000000000000159086285808736" y="-86.60254037844385"/>
+<use href="#board_cell" x="14.99999999999999" y="-77.94228634059948"/>
+<use href="#board_cell" x="29.999999999999996" y="-69.2820323027551"/>
+<use href="#board_cell" x="45" y="-60.62177826491073"/>
+<use href="#board_cell" x="60.00000000000001" y="-51.961524227066356"/>
+<use href="#board_cell" x="74.99999999999996" y="-43.30127018922196"/>
+<use href="#board_cell" x="74.99999999999996" y="-25.98076211353319"/>
+<use href="#board_cell" x="74.99999999999997" y="-8.660254037844417"/>
+<use href="#board_cell" x="74.99999999999997" y="8.660254037844354"/>
+<use href="#board_cell" x="74.99999999999997" y="25.980762113533125"/>
+<use href="#board_cell" x="90" y="51.961524227066306"/>
+<use href="#board_cell" x="75" y="60.621778264910695"/>
+<use href="#board_cell" x="60.00000000000001" y="69.28203230275508"/>
+<use href="#board_cell" x="45.000000000000014" y="77.94228634059948"/>
+<use href="#board_cell" x="30.000000000000014" y="86.60254037844388"/>
+<use href="#board_cell" x="15.000000000000028" y="95.26279441628826"/>
+<use href="#board_cell" x="0.000000000000006363451432349441" y="103.92304845413263"/>
+<use href="#board_cell" x="-14.999999999999995" y="95.26279441628824"/>
+<use href="#board_cell" x="-29.999999999999996" y="86.60254037844386"/>
+<use href="#board_cell" x="-45" y="77.94228634059948"/>
+<use href="#board_cell" x="-60" y="69.28203230275511"/>
+<use href="#board_cell" x="-75" y="60.62177826491072"/>
+<use href="#board_cell" x="-89.99999999999997" y="51.96152422706635"/>
+<use href="#board_cell" x="-89.99999999999997" y="34.64101615137758"/>
+<use href="#board_cell" x="-89.99999999999997" y="17.320508075688807"/>
+<use href="#board_cell" x="-89.99999999999999" y="0.00000000000003552713678800501"/>
+<use href="#board_cell" x="-89.99999999999999" y="-17.320508075688736"/>
+<use href="#board_cell" x="-89.99999999999999" y="-34.6410161513775"/>
+<use href="#board_cell" x="-90.00000000000001" y="-51.961524227066285"/>
+<use href="#board_cell" x="-75.00000000000003" y="-60.621778264910674"/>
+<use href="#board_cell" x="-60.00000000000003" y="-69.28203230275507"/>
+<use href="#board_cell" x="-45.000000000000036" y="-77.94228634059947"/>
+<use href="#board_cell" x="-30.000000000000043" y="-86.60254037844385"/>
+<use href="#board_cell" x="-15.000000000000057" y="-95.26279441628824"/>
+<use href="#board_cell" x="-0.000000000000019090354297048322" y="-103.92304845413263"/>
+<use href="#board_cell" x="14.999999999999986" y="-95.26279441628826"/>
+<use href="#board_cell" x="29.999999999999993" y="-86.60254037844388"/>
+<use href="#board_cell" x="44.99999999999999" y="-77.94228634059951"/>
+<use href="#board_cell" x="60" y="-69.28203230275514"/>
+<use href="#board_cell" x="75" y="-60.621778264910766"/>
+<use href="#board_cell" x="89.99999999999996" y="-51.961524227066356"/>
+<use href="#board_cell" x="89.99999999999996" y="-34.641016151377585"/>
+<use href="#board_cell" x="89.99999999999997" y="-17.320508075688814"/>
+<use href="#board_cell" x="89.99999999999997" y="-0.00000000000004263256414560601"/>
+<use href="#board_cell" x="89.99999999999997" y="17.32050807568873"/>
+<use href="#board_cell" x="89.99999999999999" y="34.64101615137749"/>
+</svg>

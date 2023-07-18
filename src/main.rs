@@ -1,9 +1,13 @@
 use std::f64::consts::TAU;
+use std::fs;
+use std::fs::File;
+use std::io::Write;
+use std::path::Path as FilePath;
 use svg::node::element::path::Data;
 use svg::node::element::Circle;
 use svg::node::element::Definitions;
 use svg::node::element::Group;
-use svg::node::element::Path;
+use svg::node::element::Path as SVGPath;
 use svg::node::element::Rectangle;
 use svg::node::element::Use;
 use svg::Document;
@@ -11,8 +15,9 @@ use svg::Document;
 const ROOT_3: f64 = 1.7320508075688772;
 
 fn main() {
-    let board_size = 4; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let board_size: u32 = 4; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
     let triangles_included = true;
+    let triangles_hollow = true;
     let hexagon_radius = 10.0;
     let hexagon_height = hexagon_radius * ROOT_3;
     let stroke_width = 1.0;
@@ -29,6 +34,7 @@ fn main() {
     let hexagon_angle = TAU / 6.0;
     let hexagon_angle_in_degrees = hexagon_angle * 360.0 / TAU;
     let triangle_radius = hexagon_radius / 2.0;
+    let triangle_hollow_interior_radius = triangle_radius * 0.97;
     let triangle_angle = TAU / 3.0;
     let triangle_rotation = TAU / 4.0;
     let pip_radius = stroke_width;
@@ -75,6 +81,19 @@ fn main() {
             (
                 centre.x + triangle_radius * (n as f64 * triangle_angle + triangle_rotation).cos(),
                 centre.y + triangle_radius * (n as f64 * triangle_angle + triangle_rotation).sin(),
+            )
+        })
+        .collect();
+
+    let triangle_hollow_interior_vertices: Vec<(f64, f64)> = (0..=2)
+        .map(|n| {
+            (
+                centre.x
+                    + triangle_hollow_interior_radius
+                        * (n as f64 * triangle_angle + triangle_rotation).cos(),
+                centre.y
+                    + triangle_hollow_interior_radius
+                        * (n as f64 * triangle_angle + triangle_rotation).sin(),
             )
         })
         .collect();
@@ -148,25 +167,41 @@ fn main() {
         .line_to(triangle_vertices[2])
         .close();
 
-    let hexagon_definition = Path::new()
+    let triangle_hollow_interior_data = Data::new()
+        .move_to(triangle_hollow_interior_vertices[0])
+        .line_to(triangle_hollow_interior_vertices[1])
+        .line_to(triangle_hollow_interior_vertices[2])
+        .close();
+
+    let hexagon_definition = SVGPath::new()
         .set("fill", "none")
         .set("stroke", "black")
         .set("stroke-width", stroke_width)
         .set("d", hexagon_data)
         .set("id", "hexagon");
 
-    let triangle_definition = Path::new()
+    let triangle_definition = SVGPath::new()
         .set("fill", "black")
         .set("stroke", "none")
         .set("d", triangle_data)
         .set("id", "triangle");
+
+    let triangle_hollow_interior_definition = SVGPath::new()
+        .set("fill", "white")
+        .set("stroke", "none")
+        .set("d", triangle_hollow_interior_data)
+        .set("id", "triangle_hollow_interior");
 
     let mut board_cell_definition = Group::new()
         .add(Use::new().set("href", "#hexagon"))
         .set("id", "board_cell");
 
     if triangles_included {
-        board_cell_definition = board_cell_definition.add(Use::new().set("href", "#triangle"))
+        board_cell_definition = board_cell_definition.add(Use::new().set("href", "#triangle"));
+        if triangles_hollow {
+            board_cell_definition =
+                board_cell_definition.add(Use::new().set("href", "#triangle_hollow_interior"));
+        }
     }
 
     let dice_outline_definition = Rectangle::new()
@@ -350,6 +385,7 @@ fn main() {
     let definitions = Definitions::new()
         .add(hexagon_definition)
         .add(triangle_definition)
+        .add(triangle_hollow_interior_definition)
         .add(board_cell_definition)
         .add(dice_outline_definition)
         .add(pip_definition)
@@ -452,10 +488,235 @@ fn main() {
         }
     }
 
-    svg::save("docs/board.svg", &document).unwrap();
+    // Paper calculations in centimetres
+    let paper_height = 29.7; // Assuming portrait A4 - will be automatically
+    let paper_width = 21.0; // switched to landscape later if necessary.
+    let paper_margin = 0.6;
+    let paper_image_overlap = 4.0;
+    let paper_available_width = paper_width - 2.0 * paper_margin;
+    let paper_available_height = paper_height - 2.0 * paper_margin;
+    let paper_image_total_width = image_width * 3.0 / hexagon_height;
+    let paper_image_total_height = image_height * 3.0 / hexagon_height;
+
+    let portrait_sheets_required_for_width = ((paper_image_total_width - paper_image_overlap)
+        / (paper_available_width - paper_image_overlap))
+        .ceil() as u64;
+    let portrait_sheets_required_for_height = ((paper_image_total_height - paper_image_overlap)
+        / (paper_available_height - paper_image_overlap))
+        .ceil() as u64;
+    let landscape_sheets_required_for_width = ((paper_image_total_width - paper_image_overlap)
+        / (paper_available_height - paper_image_overlap))
+        .ceil() as u64;
+    let landscape_sheets_required_for_height = ((paper_image_total_height - paper_image_overlap)
+        / (paper_available_width - paper_image_overlap))
+        .ceil() as u64;
+    let portrait_sheets_required =
+        portrait_sheets_required_for_width * portrait_sheets_required_for_height;
+    let landscape_sheets_required =
+        landscape_sheets_required_for_width * landscape_sheets_required_for_height;
+
+    let paper_orientation = if portrait_sheets_required <= landscape_sheets_required {
+        PaperOrientation::Portrait
+    } else {
+        PaperOrientation::Landscape
+    };
+
+    let (
+        paper_oriented_available_width,
+        paper_oriented_available_height,
+        sheets_required_for_width,
+        sheets_required_for_height,
+    ) = match paper_orientation {
+        PaperOrientation::Portrait => (
+            paper_available_width,
+            paper_available_height,
+            portrait_sheets_required_for_width,
+            portrait_sheets_required_for_height,
+        ),
+        PaperOrientation::Landscape => (
+            paper_available_height,
+            paper_available_width,
+            landscape_sheets_required_for_width,
+            landscape_sheets_required_for_height,
+        ),
+    };
+
+    let (view_box_width, view_box_height, view_box_horizontal_step, view_box_vertical_step) = (
+        image_width * paper_oriented_available_width / paper_image_total_width,
+        image_height * paper_oriented_available_height / paper_image_total_height,
+        image_width * (paper_oriented_available_width - paper_image_overlap)
+            / paper_image_total_width,
+        image_height * (paper_oriented_available_height - paper_image_overlap)
+            / paper_image_total_height,
+    );
+
+    let views: Vec<(f64, f64, String)> = (0..sheets_required_for_height)
+        .map(|y| {
+            (0..sheets_required_for_width).map(move |x| {
+                (
+                    x as f64 * view_box_horizontal_step,
+                    y as f64 * view_box_vertical_step,
+                    format!("x{}y{}", x, y),
+                )
+            })
+        })
+        .flatten()
+        .collect();
+
+    let number_of_hexagons = (board_size + 1).pow(3) - board_size.pow(3);
+
+    let triangle_information = match (triangles_included, triangles_hollow) {
+        (true, true) => "hollow_triangles",
+        (true, false) => "filled_triangles",
+        (_, _) => "no_triangles",
+    };
+
+    let board_directory_name = format!(
+        "docs/size_{}_{}_board_with_{}",
+        board_size, number_of_hexagons, triangle_information
+    );
+
+    if !FilePath::new(&board_directory_name).exists() {
+        let create_board_directory_result = fs::create_dir(&board_directory_name);
+
+        match create_board_directory_result {
+            Ok(_) => (),
+            Err(error) => panic!(
+                "Problem creating board directory {}:\n{:?}",
+                board_directory_name, error
+            ),
+        };
+    }
+
+    let css_directory_name = format!("{}/css", board_directory_name);
+
+    if !FilePath::new(&css_directory_name).exists() {
+        let create_css_directory_result = fs::create_dir(&css_directory_name);
+
+        match create_css_directory_result {
+            Ok(_) => (),
+            Err(error) => panic!(
+                "Problem creating css directory {}:\n{:?}",
+                css_directory_name, error
+            ),
+        };
+    }
+
+    for (x, y, name) in &views {
+        document = document.set("viewBox", (*x, *y, view_box_width, view_box_height));
+        let svg_save_file_path = format!("{}/board_component_{}.svg", board_directory_name, name);
+        let svg_save_result = svg::save(&svg_save_file_path, &document);
+
+        match svg_save_result {
+            Ok(_) => (),
+            Err(error) => panic!(
+                "Problem saving SVG file to {}:\n{:?}",
+                svg_save_file_path, error
+            ),
+        };
+    }
+
+    let image_divs: String = views
+        .iter()
+        .map(|(_, _, name)| {
+            format!(
+                r#"<div><img src="board_component_{}.svg" alt="" /></div>"#,
+                name
+            )
+        })
+        .collect();
+
+    let content_of_index_html = format!(
+        include_str!("templates/template_index_html.txt"),
+        image_divs
+    );
+
+    let content_of_home_css = format!(
+        include_str!("templates/template_home_css.txt"),
+        paper_oriented_available_height, paper_oriented_available_width
+    );
+
+    let orientation_string = match paper_orientation {
+        PaperOrientation::Portrait => "portrait",
+        PaperOrientation::Landscape => "landscape",
+    };
+
+    let content_of_print_css = format!(
+        include_str!("templates/template_print_css.txt"),
+        orientation_string
+    );
+
+    let index_html_file_path_name = format!("{}/index.html", board_directory_name);
+    let create_index_html_file_path_result = File::create(&index_html_file_path_name);
+
+    let mut index_html_file_path = match create_index_html_file_path_result {
+        Ok(file) => file,
+        Err(error) => panic!(
+            "Problem creating file path for {}:\n{:?}",
+            index_html_file_path_name, error
+        ),
+    };
+
+    let write_index_html_result = write!(index_html_file_path, "{}", content_of_index_html);
+
+    match write_index_html_result {
+        Ok(_) => (),
+        Err(error) => panic!(
+            "Problem writing index.html to {:?}:\n{:?}",
+            index_html_file_path, error
+        ),
+    };
+
+    let home_css_file_path_name = format!("{}/home.css", css_directory_name);
+    let create_home_css_file_path_result = File::create(&home_css_file_path_name);
+
+    let mut home_css_file_path = match create_home_css_file_path_result {
+        Ok(file) => file,
+        Err(error) => panic!(
+            "Problem creating file path for {}:\n{:?}",
+            home_css_file_path_name, error
+        ),
+    };
+
+    let write_home_css_result = write!(home_css_file_path, "{}", content_of_home_css);
+
+    match write_home_css_result {
+        Ok(_) => (),
+        Err(error) => panic!(
+            "Problem writing home.css to {:?}:\n{:?}",
+            home_css_file_path, error
+        ),
+    };
+
+    let print_css_file_path_name = format!("{}/print.css", css_directory_name);
+    let create_print_css_file_path_result = File::create(&print_css_file_path_name);
+
+    let mut print_css_file_path = match create_print_css_file_path_result {
+        Ok(file) => file,
+        Err(error) => panic!(
+            "Problem creating file path for {}:\n{:?}",
+            print_css_file_path_name, error
+        ),
+    };
+
+    let write_print_css_result = write!(print_css_file_path, "{}", content_of_print_css);
+
+    match write_print_css_result {
+        Ok(_) => (),
+        Err(error) => panic!(
+            "Problem writing print.css to {:?}:\n{:?}",
+            print_css_file_path, error
+        ),
+    };
 }
 
 struct Coordinates {
     x: f64,
     y: f64,
+}
+
+#[derive(Debug)]
+enum PaperOrientation {
+    Portrait,
+    Landscape,
 }

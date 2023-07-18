@@ -1,10 +1,12 @@
-<svg viewBox="0 0 171.15470053837925 191.5255888325765" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 141.45081595145828 114.3153532995459 164.5448267190433" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <path d="M95.20235,95.11327 A1.5,1.5,0,0,1,95.20235,96.412315 L90.95235,103.77353 A1.5,1.5,0,0,1,89.82735,104.42305 L81.32735,104.42305 A1.5,1.5,0,0,1,80.20235,103.77353 L75.95235,96.412315 A1.5,1.5,0,0,1,75.95235,95.11327 L80.20235,87.75206 A1.5,1.5,0,0,1,81.32735,87.10254 L89.82735,87.10254 A1.5,1.5,0,0,1,90.95235,87.75206 z" fill="none" id="hexagon" stroke="black" stroke-width="1"/>
 <path d="M85.57735,100.762794 L81.24722,93.262794 L89.90748,93.262794 z" fill="black" id="triangle" stroke="none"/>
+<path d="M85.57735,100.61279 L81.37713,93.33779 L89.77757,93.33779 z" fill="white" id="triangle_hollow_interior" stroke="none"/>
 <g id="board_cell">
 <use href="#hexagon"/>
 <use href="#triangle"/>
+<use href="#triangle_hollow_interior"/>
 </g>
 <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="80.57735026918962" y="90.76279441628824"/>
 <circle cx="85.57735026918962" cy="95.76279441628824" fill="black" id="pip" r="1" stroke="none"/>
