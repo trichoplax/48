@@ -2,9 +2,13 @@
 <html lang="en-GB">
     <head>
         <meta charset="utf-8" />
-        <title>Testing board printing</title>
-        <link rel="stylesheet" href="css/home.css" />
-        <link rel="stylesheet" media="print" href="css/print.css" />
+        <title>{}</title>
     </head>
-    <body>{}</body>
+    <body>
+        <h1>{}</h1>
+        <ul>
+            <li><a href="board_for_printing.html">Printable board</a></li>
+            <li><a href="rules_for_printing.html">Printable rules</a></li>
+        </ul>
+    </body>
 </html>

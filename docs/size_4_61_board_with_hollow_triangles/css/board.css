@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    font-size: 0;
+}
+
+div {
+    height: 28.5cm;
+    overflow: hidden;
+    break-after: page;
+}
+
+img {
+    width: 19.8cm;
+}

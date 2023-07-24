@@ -571,10 +571,12 @@ fn main() {
         (_, _) => "no_triangles",
     };
 
-    let board_directory_name = format!(
-        "docs/size_{}_{}_board_with_{}",
+    let board_description = format!(
+        "size_{}_{}_board_with_{}",
         board_size, number_of_hexagons, triangle_information
     );
+
+    let board_directory_name = format!("docs/{}", board_description);
 
     if !FilePath::new(&board_directory_name).exists() {
         let create_board_directory_result = fs::create_dir(&board_directory_name);
@@ -602,6 +604,18 @@ fn main() {
         };
     }
 
+    document = document.set("viewBox", (0, 0, image_width, image_height));
+    let svg_save_file_path = format!("{}/whole_board.svg", board_directory_name);
+    let svg_save_result = svg::save(&svg_save_file_path, &document);
+
+    match svg_save_result {
+        Ok(_) => (),
+        Err(error) => panic!(
+            "Problem saving SVG file to {}:\n{:?}",
+            svg_save_file_path, error
+        ),
+    };
+
     for (x, y, name) in &views {
         document = document.set("viewBox", (*x, *y, view_box_width, view_box_height));
         let svg_save_file_path = format!("{}/board_component_{}.svg", board_directory_name, name);
@@ -626,14 +640,12 @@ fn main() {
         })
         .collect();
 
+    let title_of_index_html = &board_description;
+    let heading_of_index_html = &board_description;
+
     let content_of_index_html = format!(
         include_str!("templates/template_index_html.txt"),
-        image_divs
-    );
-
-    let content_of_home_css = format!(
-        include_str!("templates/template_home_css.txt"),
-        paper_oriented_available_height, paper_oriented_available_width
+        title_of_index_html, heading_of_index_html
     );
 
     let orientation_string = match paper_orientation {
@@ -641,73 +653,78 @@ fn main() {
         PaperOrientation::Landscape => "landscape",
     };
 
-    let content_of_print_css = format!(
-        include_str!("templates/template_print_css.txt"),
+    let content_of_board_for_printing_html = format!(
+        include_str!("templates/template_board_for_printing_html.txt"),
+        orientation_string, image_divs
+    );
+
+    let content_of_dice_qr_code_svg = include_str!("templates/template_dice_qr_code_svg.txt");
+
+    let content_of_rules_page_0_svg = include_str!("templates/template_rules_page_0_svg.txt");
+    let content_of_rules_page_1_svg = include_str!("templates/template_rules_page_1_svg.txt");
+    let content_of_rules_page_2_svg = include_str!("templates/template_rules_page_2_svg.txt");
+    let content_of_rules_page_3_svg = include_str!("templates/template_rules_page_3_svg.txt");
+    let content_of_rules_page_4_svg = include_str!("templates/template_rules_page_4_svg.txt");
+    let content_of_rules_page_5_svg = include_str!("templates/template_rules_page_5_svg.txt");
+    let content_of_rules_page_6_svg = include_str!("templates/template_rules_page_6_svg.txt");
+    let content_of_rules_page_7_svg = format!(
+        include_str!("templates/template_rules_page_7_svg.txt"),
+        content_of_dice_qr_code_svg
+    );
+
+    let content_of_rules_for_printing_html = format!(
+        include_str!("templates/template_rules_for_printing_html.txt"),
+        content_of_rules_page_4_svg,
+        content_of_rules_page_3_svg,
+        content_of_rules_page_2_svg,
+        content_of_rules_page_1_svg,
+        content_of_rules_page_5_svg,
+        content_of_rules_page_6_svg,
+        content_of_rules_page_7_svg,
+        content_of_rules_page_0_svg
+    );
+
+    let content_of_board_css = format!(
+        include_str!("templates/template_board_css.txt"),
+        paper_oriented_available_height, paper_oriented_available_width
+    );
+
+    let content_of_board_print_css = format!(
+        include_str!("templates/template_board_print_css.txt"),
         orientation_string
     );
 
-    let index_html_file_path_name = format!("{}/index.html", board_directory_name);
-    let create_index_html_file_path_result = File::create(&index_html_file_path_name);
+    let content_of_rules_css = include_str!("templates/template_rules_css.txt");
+    let content_of_rules_print_css = include_str!("templates/template_rules_print_css.txt");
 
-    let mut index_html_file_path = match create_index_html_file_path_result {
-        Ok(file) => file,
-        Err(error) => panic!(
-            "Problem creating file path for {}:\n{:?}",
-            index_html_file_path_name, error
-        ),
-    };
-
-    let write_index_html_result = write!(index_html_file_path, "{}", content_of_index_html);
-
-    match write_index_html_result {
-        Ok(_) => (),
-        Err(error) => panic!(
-            "Problem writing index.html to {:?}:\n{:?}",
-            index_html_file_path, error
-        ),
-    };
-
-    let home_css_file_path_name = format!("{}/home.css", css_directory_name);
-    let create_home_css_file_path_result = File::create(&home_css_file_path_name);
-
-    let mut home_css_file_path = match create_home_css_file_path_result {
-        Ok(file) => file,
-        Err(error) => panic!(
-            "Problem creating file path for {}:\n{:?}",
-            home_css_file_path_name, error
-        ),
-    };
-
-    let write_home_css_result = write!(home_css_file_path, "{}", content_of_home_css);
-
-    match write_home_css_result {
-        Ok(_) => (),
-        Err(error) => panic!(
-            "Problem writing home.css to {:?}:\n{:?}",
-            home_css_file_path, error
-        ),
-    };
-
-    let print_css_file_path_name = format!("{}/print.css", css_directory_name);
-    let create_print_css_file_path_result = File::create(&print_css_file_path_name);
-
-    let mut print_css_file_path = match create_print_css_file_path_result {
-        Ok(file) => file,
-        Err(error) => panic!(
-            "Problem creating file path for {}:\n{:?}",
-            print_css_file_path_name, error
-        ),
-    };
-
-    let write_print_css_result = write!(print_css_file_path, "{}", content_of_print_css);
-
-    match write_print_css_result {
-        Ok(_) => (),
-        Err(error) => panic!(
-            "Problem writing print.css to {:?}:\n{:?}",
-            print_css_file_path, error
-        ),
-    };
+    create_file(
+        &format!("{}/index.html", board_directory_name),
+        &content_of_index_html,
+    );
+    create_file(
+        &format!("{}/board_for_printing.html", board_directory_name),
+        &content_of_board_for_printing_html,
+    );
+    create_file(
+        &format!("{}/rules_for_printing.html", board_directory_name),
+        &content_of_rules_for_printing_html,
+    );
+    create_file(
+        &format!("{}/board.css", css_directory_name),
+        &content_of_board_css,
+    );
+    create_file(
+        &format!("{}/board_print.css", css_directory_name),
+        &content_of_board_print_css,
+    );
+    create_file(
+        &format!("{}/rules.css", css_directory_name),
+        &content_of_rules_css,
+    );
+    create_file(
+        &format!("{}/rules_print.css", css_directory_name),
+        &content_of_rules_print_css,
+    );
 }
 
 struct Coordinates {
@@ -719,4 +736,23 @@ struct Coordinates {
 enum PaperOrientation {
     Portrait,
     Landscape,
+}
+
+fn create_file(file_path_name: &str, file_content: &str) {
+    let create_file_path_result = File::create(&file_path_name);
+
+    let mut file_path = match create_file_path_result {
+        Ok(file) => file,
+        Err(error) => panic!(
+            "Problem creating file path for {}:\n{:?}",
+            file_path_name, error
+        ),
+    };
+
+    let write_file_result = write!(file_path, "{}", file_content);
+
+    match write_file_result {
+        Ok(_) => (),
+        Err(error) => panic!("Problem writing to {:?}:\n{:?}", file_path, error),
+    };
 }

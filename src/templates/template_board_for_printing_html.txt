@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <title>Board for printing on sheets of A4 paper in {}</title>
+        <link rel="stylesheet" href="css/board.css" />
+        <link rel="stylesheet" media="print" href="css/board_print.css" />
+    </head>
+    <body>{}</body>
+</html>

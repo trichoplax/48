@@ -1,0 +1,76 @@
+<svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="413" />
+    <use href="#dice_with_pips_3" x="10%" y="633" />
+    <use href="#dice_with_pips_4" x="10%" y="783" />
+    <use href="#dice_with_pips_5" x="10%" y="1233" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Picking a move</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >Player 1 starts.</tspan>
+        <tspan x="15%" y="430" >Place 1 or more dice from your</tspan>
+        <tspan x="15%" y="505" >dice cache into the tumbler.</tspan>
+        <tspan x="15%" y="650" >Tumble the dice into the tray.</tspan>
+        <tspan x="15%" y="800" >Choose 1 of the dice to be your</tspan>
+        <tspan x="15%" y="875" >direction (corresponding to 1 of</tspan>
+        <tspan x="15%" y="950" >the 6 direction hexagons around</tspan>
+        <tspan x="15%" y="1025" >the board), and 1 to be your</tspan>
+        <tspan x="15%" y="1100" >number of steps.</tspan>
+        <tspan x="15%" y="1250" >These may be the same dice.</tspan>
+    </text>
+</svg>

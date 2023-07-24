@@ -1,0 +1,390 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33 33">
+    <defs>
+        <rect height="10" id="dice_template" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <g id="filled_dice">
+            <use href="#dice_template" fill="black" />
+        </g>
+        <circle cx="0" cy="0" id="pip_template" r="1" stroke="none"/>
+        <use href="#pip_template" id="negative_pip" fill="white"/>
+        <use href="#negative_pip" id="negative_centre_pip"/>
+        <use href="#negative_pip" id="negative_top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#negative_pip" id="negative_top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#negative_pip" id="negative_bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#negative_pip" id="negative_bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#negative_pip" id="negative_centre_left_pip" x="-2.5"/>
+        <use href="#negative_pip" id="negative_centre_right_pip" x="2.5"/>
+        <g id="negative_dice_with_pips_1" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_2" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_3" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_4" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_5" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_6" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+            <use href="#negative_centre_left_pip"/>
+            <use href="#negative_centre_right_pip"/>
+        </g>
+    </defs>
+    <g x="5" y="5">
+        <use href="#negative_dice_with_pips_1" x="4.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="14.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="23.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="18.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_1" x="13.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="19.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_3" x="24.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="26.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="17.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="26.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="18.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_1" x="22.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="9.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="16.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_2" x="16.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_4" x="19.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="27.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="28.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="13.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_4" x="27.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_6" x="10.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="16.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="17.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_3" x="11.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="12.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="25.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="13.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="18.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="11.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_5" x="12.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="15.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="21.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="22.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="11.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="27.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="12.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_2" x="16.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_3" x="24.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_3" x="4.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_3" x="10.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="19.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="21.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_1" x="27.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="4.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="10.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="23.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="28.5"/>
+    </g>
+</svg>

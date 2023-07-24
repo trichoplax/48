@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <title>Rules as 8 page zine on 1 sheet of A4</title>
+        <link rel="stylesheet" href="css/rules.css" />
+        <link rel="stylesheet" media="print" href="css/rules_print.css" />
+    </head>
+    <body>
+        <container class="upside-down"><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="413" />
+    <use href="#dice_with_pips_3" x="10%" y="633" />
+    <use href="#dice_with_pips_4" x="10%" y="783" />
+    <use href="#dice_with_pips_5" x="10%" y="1233" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Picking a move</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >Player 1 starts.</tspan>
+        <tspan x="15%" y="430" >Place 1 or more dice from your</tspan>
+        <tspan x="15%" y="505" >dice cache into the tumbler.</tspan>
+        <tspan x="15%" y="650" >Tumble the dice into the tray.</tspan>
+        <tspan x="15%" y="800" >Choose 1 of the dice to be your</tspan>
+        <tspan x="15%" y="875" >direction (corresponding to 1 of</tspan>
+        <tspan x="15%" y="950" >the 6 direction hexagons around</tspan>
+        <tspan x="15%" y="1025" >the board), and 1 to be your</tspan>
+        <tspan x="15%" y="1100" >number of steps.</tspan>
+        <tspan x="15%" y="1250" >These may be the same dice.</tspan>
+    </text>
+</svg></container>
+        <container class="upside-down"><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="413" />
+    <use href="#dice_with_pips_3" x="10%" y="863" />
+    <use href="#dice_with_pips_4" x="10%" y="1088" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Starting positions</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >Player 1 starts.</tspan>
+        <tspan x="15%" y="430" >Choose any pointy side up</tspan>
+        <tspan x="15%" y="505" >dice on the board and turn it</tspan>
+        <tspan x="15%" y="580" >to have your number face up.</tspan>
+        <tspan x="15%" y="655" >This will be your piece for</tspan>
+        <tspan x="15%" y="730" >the rest of the game.</tspan>
+        <tspan x="15%" y="880" >The next player then does the</tspan>
+        <tspan x="15%" y="955" >same.</tspan>
+        <tspan x="15%" y="1105" >Once all players have</tspan>
+        <tspan x="15%" y="1180" >claimed 1 dice each,</tspan>
+        <tspan x="15%" y="1255" >standard turns start.</tspan>
+    </text>
+</svg></container>
+        <container class="upside-down"><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="488" />
+    <use href="#dice_with_pips_3" x="10%" y="713" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Setting up</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >Place 1 dice pointy side up in</tspan>
+        <tspan x="15%" y="355" >each of the holes in the board.</tspan>
+        <tspan x="15%" y="505" >Give a cache containing 6 dice</tspan>
+        <tspan x="15%" y="580" >to each player.</tspan>
+        <tspan x="15%" y="730" >Pass the tumbler and the</tspan>
+        <tspan x="15%" y="805" >rules to player 1.</tspan>
+        <tspan x="8%" y="955" >To aid memory, you may wish to</tspan>
+        <tspan x="8%" y="1030" >rotate the board so that direction</tspan>
+        <tspan x="8%" y="1105" >hexagon 1 points at player 1,</tspan>
+        <tspan x="8%" y="1180" >direction hexagon 2 points at</tspan>
+        <tspan x="8%" y="1255" >player 2, and so on.</tspan>
+    </text>
+</svg></container>
+        <container class="upside-down"><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="563" />
+    <use href="#dice_with_pips_3" x="10%" y="713" />
+    <use href="#dice_with_pips_4" x="10%" y="863" />
+    <use href="#dice_with_pips_5" x="10%" y="1013" />
+    <use href="#dice_with_pips_6" x="10%" y="1163" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Equipment</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >1 board, consisting of 61 playing</tspan>
+        <tspan x="15%" y="355" >playing area hexagons plus 6</tspan>
+        <tspan x="15%" y="430" >numbered direction hexagons.</tspan>
+        <tspan x="15%" y="580" >97 dice (61 + 6  per player).</tspan>
+        <tspan x="15%" y="730" >6 dice caches (1 per player).</tspan>
+        <tspan x="15%" y="880" >1 dice rolling tray.</tspan>
+        <tspan x="15%" y="1030" >1 dice tumbler to roll from.</tspan>
+        <tspan x="15%" y="1180" >1 spent dice bin.</tspan>
+    </text>
+</svg></container>
+        <container><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_1" x="10%" y="263" />
+    <use href="#dice_with_pips_2" x="10%" y="713" />
+    <use href="#dice_with_pips_3" x="10%" y="938" />
+    <text font-size="75" text-anchor="middle" fill="black" stroke="none" class="heavy-font">
+        <tspan x="500" y="130">Moving</tspan>
+    </text>
+    <text font-size="50" text-anchor="left" fill="black" stroke="none">
+        <tspan x="15%" y="280" >Move your piece the chosen</tspan>
+        <tspan x="15%" y="355" >number of steps in the chosen</tspan>
+        <tspan x="15%" y="430" >direction. At each step, collect</tspan>
+        <tspan x="15%" y="505" >any dice already present and</tspan>
+        <tspan x="15%" y="580" >put it into your dice cache.</tspan>
+        <tspan x="15%" y="730" >Empty the dice tray into the</tspan>
+        <tspan x="15%" y="805" >spent dice bin.</tspan>
+        <tspan x="15%" y="955" >If you have no dice in your</tspan>
+        <tspan x="15%" y="1030" >cache, put your piece in the</tspan>
+        <tspan x="15%" y="1105" >spent dice bin and leave the</tspan>
+        <tspan x="15%" y="1180" >game.</tspan>
+    </text>
+</svg></container>
+        <container><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_4" x="10%" y="113" />
+    <use href="#dice_with_pips_5" x="10%" y="638" />
+    <use href="#dice_with_pips_6" x="10%" y="1013" />
+    <text font-size="50" text-anchor="left" fill="black">
+        <tspan x="15%" y="130" >If your move takes you off the</tspan>
+        <tspan x="15%" y="205" >edge off the board (including</tspan>
+        <tspan x="15%" y="280" >onto a direction hexagon), put</tspan>
+        <tspan x="15%" y="355" >your piece and all your cache</tspan>
+        <tspan x="15%" y="430" >dice into the spent dice bin</tspan>
+        <tspan x="15%" y="505" >and leave the game.</tspan>
+        <tspan x="15%" y="655" >If your piece is collected by</tspan>
+        <tspan x="15%" y="730" >another player, put all your</tspan>
+        <tspan x="15%" y="805" >cache dice into their cache</tspan>
+        <tspan x="15%" y="880" >and leave the game.</tspan>
+        <tspan x="15%" y="1030" >If you are the last remaining</tspan>
+        <tspan x="15%" y="1105" >player, you win!</tspan>
+        <tspan x="8%" y="1255" >Otherwise, pass the tumbler and</tspan>
+        <tspan x="8%" y="1330" >rules to the next player.</tspan>
+    </text>
+</svg></container>
+        <container><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33 33">
+    <defs>
+        <rect height="10" id="dice_template" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <g id="filled_dice">
+            <use href="#dice_template" fill="black" />
+        </g>
+        <circle cx="0" cy="0" id="pip_template" r="1" stroke="none"/>
+        <use href="#pip_template" id="negative_pip" fill="white"/>
+        <use href="#negative_pip" id="negative_centre_pip"/>
+        <use href="#negative_pip" id="negative_top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#negative_pip" id="negative_top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#negative_pip" id="negative_bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#negative_pip" id="negative_bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#negative_pip" id="negative_centre_left_pip" x="-2.5"/>
+        <use href="#negative_pip" id="negative_centre_right_pip" x="2.5"/>
+        <g id="negative_dice_with_pips_1" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_2" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_3" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_4" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_5" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_centre_pip"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+        </g>
+        <g id="negative_dice_with_pips_6" transform="scale(0.085)">
+            <use href="#filled_dice"/>
+            <use href="#negative_top_left_pip"/>
+            <use href="#negative_top_right_pip"/>
+            <use href="#negative_bottom_left_pip"/>
+            <use href="#negative_bottom_right_pip"/>
+            <use href="#negative_centre_left_pip"/>
+            <use href="#negative_centre_right_pip"/>
+        </g>
+    </defs>
+    <g x="5" y="5">
+        <use href="#negative_dice_with_pips_1" x="4.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="14.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="23.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="4.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_1" x="18.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="5.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_1" x="13.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="19.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_3" x="24.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="26.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="6.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="17.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_2" x="26.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="7.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="18.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="8.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_1" x="22.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="9.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="7.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="9.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="16.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="10.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_2" x="16.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_4" x="19.5" y="11.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="27.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="28.5" y="12.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="13.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_4" x="27.5" y="13.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_6" x="10.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="16.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="17.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="14.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_3" x="11.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="12.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="15.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_2" x="22.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="25.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="16.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_4" x="12.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="13.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="18.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="17.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="9.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="11.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_5" x="12.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="15.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_3" x="21.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="22.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_2" x="24.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="18.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="11.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_4" x="27.5" y="19.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="5.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="19.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="20.5"/>
+        <use href="#negative_dice_with_pips_2" x="12.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_4" x="15.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_2" x="16.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_1" x="17.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_1" x="20.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_3" x="24.5" y="21.5"/>
+        <use href="#negative_dice_with_pips_3" x="4.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_4" x="7.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_3" x="10.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_3" x="22.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="22.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="20.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_2" x="28.5" y="23.5"/>
+        <use href="#negative_dice_with_pips_4" x="4.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="6.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="8.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="10.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="16.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="20.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="23.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="24.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="25.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_4" x="26.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_2" x="27.5" y="24.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="8.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="18.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_2" x="21.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="23.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_4" x="28.5" y="25.5"/>
+        <use href="#negative_dice_with_pips_1" x="4.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="6.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="7.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="8.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="10.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="14.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_2" x="15.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="19.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="21.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_4" x="22.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_1" x="25.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_1" x="27.5" y="26.5"/>
+        <use href="#negative_dice_with_pips_3" x="4.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="10.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_4" x="13.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="14.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="15.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_4" x="16.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="23.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_1" x="24.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="25.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="26.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="27.5"/>
+        <use href="#negative_dice_with_pips_2" x="4.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_4" x="5.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="6.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="7.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="8.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="9.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="10.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="12.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="13.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_4" x="14.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_2" x="19.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="21.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_1" x="26.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="27.5" y="28.5"/>
+        <use href="#negative_dice_with_pips_3" x="28.5" y="28.5"/>
+    </g>
+</svg>
+    <text font-size="50" text-anchor="middle" fill="black">
+        <tspan x="500" y="1250" >https://trichoplax.github.io/48</tspan>
+    </text>
+</svg></container>
+        <container><svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <text x="500" y="350" font-size="300" text-anchor="middle" fill="white" stroke="black" stroke-width="4" class="heavy-font">
+        /48
+    </text>
+    <image x="100" y="400" width="800" href="whole_board.svg"/>
+</svg></container>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <title>Rules as 8 page zine on 1 sheet of A4</title>
+        <link rel="stylesheet" href="css/rules.css" />
+        <link rel="stylesheet" media="print" href="css/rules_print.css" />
+    </head>
+    <body>
+        <container class="upside-down">{}</container>
+        <container class="upside-down">{}</container>
+        <container class="upside-down">{}</container>
+        <container class="upside-down">{}</container>
+        <container>{}</container>
+        <container>{}</container>
+        <container>{}</container>
+        <container>{}</container>
+    </body>
+</html>

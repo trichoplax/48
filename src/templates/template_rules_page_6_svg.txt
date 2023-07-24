@@ -1,0 +1,75 @@
+<svg
+    viewBox="0 0 1000 1414"
+    preserveAspectRatio="xMidYMid meet"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <rect fill="none" height="10" id="dice_outline" rx="1" stroke="black" stroke-width="1" width="10" x="-5" y="-5"/>
+        <circle cx="0" cy="0" fill="black" id="pip" r="1" stroke="none"/>
+        <use href="#pip" id="centre_pip"/>
+        <use href="#pip" id="top_left_pip" x="-2.5" y="-2.5"/>
+        <use href="#pip" id="top_right_pip" x="2.5" y="-2.5"/>
+        <use href="#pip" id="bottom_left_pip" x="-2.5" y="2.5"/>
+        <use href="#pip" id="bottom_right_pip" x="2.5" y="2.5"/>
+        <use href="#pip" id="centre_left_pip" x="-2.5"/>
+        <use href="#pip" id="centre_right_pip" x="2.5"/>
+        <g id="dice_with_pips_1" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+        </g>
+        <g id="dice_with_pips_2" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_3" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#centre_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_4" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_5" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#centre_pip"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+        </g>
+        <g id="dice_with_pips_6" transform="scale(4)">
+            <use href="#dice_outline"/>
+            <use href="#top_left_pip"/>
+            <use href="#top_right_pip"/>
+            <use href="#bottom_left_pip"/>
+            <use href="#bottom_right_pip"/>
+            <use href="#centre_left_pip"/>
+            <use href="#centre_right_pip"/>
+        </g>
+    </defs>
+    <use href="#dice_with_pips_4" x="10%" y="113" />
+    <use href="#dice_with_pips_5" x="10%" y="638" />
+    <use href="#dice_with_pips_6" x="10%" y="1013" />
+    <text font-size="50" text-anchor="left" fill="black">
+        <tspan x="15%" y="130" >If your move takes you off the</tspan>
+        <tspan x="15%" y="205" >edge off the board (including</tspan>
+        <tspan x="15%" y="280" >onto a direction hexagon), put</tspan>
+        <tspan x="15%" y="355" >your piece and all your cache</tspan>
+        <tspan x="15%" y="430" >dice into the spent dice bin</tspan>
+        <tspan x="15%" y="505" >and leave the game.</tspan>
+        <tspan x="15%" y="655" >If your piece is collected by</tspan>
+        <tspan x="15%" y="730" >another player, put all your</tspan>
+        <tspan x="15%" y="805" >cache dice into their cache</tspan>
+        <tspan x="15%" y="880" >and leave the game.</tspan>
+        <tspan x="15%" y="1030" >If you are the last remaining</tspan>
+        <tspan x="15%" y="1105" >player, you win!</tspan>
+        <tspan x="8%" y="1255" >Otherwise, pass the tumbler and</tspan>
+        <tspan x="8%" y="1330" >rules to the next player.</tspan>
+    </text>
+</svg>
