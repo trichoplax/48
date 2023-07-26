@@ -62,7 +62,7 @@
     <text font-size="50" text-anchor="left" fill="black" stroke="none">
         <tspan x="15%" y="280" >Place 1 dice pointy side up in</tspan>
         <tspan x="15%" y="355" >each of the holes in the board.</tspan>
-        <tspan x="15%" y="505" >Give a cache containing 12 dice</tspan>
+        <tspan x="15%" y="505" >Give a cache containing {} dice</tspan>
         <tspan x="15%" y="580" >to each player.</tspan>
         <tspan x="15%" y="730" >Pass the tumbler and the</tspan>
         <tspan x="15%" y="805" >rules to player 1.</tspan>

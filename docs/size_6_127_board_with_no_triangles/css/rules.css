@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;900&display=swap');
+
+body {
+    margin: 0;
+    font-size: 0;
+}
+
+container > svg {
+    width: 24.962%;
+    height: 50%;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+container > svg .heavy-font {
+    font-weight: 900;
+}
+
+.upside-down > svg {
+    transform: rotate(0.5turn);
+}

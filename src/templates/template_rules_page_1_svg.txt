@@ -63,11 +63,11 @@
         <tspan x="500" y="130">Equipment</tspan>
     </text>
     <text font-size="50" text-anchor="left" fill="black" stroke="none">
-        <tspan x="15%" y="280" >1 board, consisting of 61</tspan>
+        <tspan x="15%" y="280" >1 board, consisting of {}</tspan>
         <tspan x="15%" y="355" >playing area hexagons plus 6</tspan>
         <tspan x="15%" y="430" >numbered direction hexagons.</tspan>
-        <tspan x="15%" y="580" >133 dice (61 + 12  per player).</tspan>
-        <tspan x="15%" y="730" >6 dice caches (1 per player).</tspan>
+        <tspan x="15%" y="580" >{} dice ({} + {} per player).</tspan>
+        <tspan x="15%" y="730" >{} dice caches (1 per player).</tspan>
         <tspan x="15%" y="880" >1 dice rolling tray.</tspan>
         <tspan x="15%" y="1030" >1 dice tumbler to roll from.</tspan>
         <tspan x="15%" y="1180" >1 spent dice bin.</tspan>

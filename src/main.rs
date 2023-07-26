@@ -15,9 +15,13 @@ use svg::Document;
 const ROOT_3: f64 = 1.7320508075688772;
 
 fn main() {
-    let board_size: u32 = 4; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let board_size: u32 = 6; // Size 0 is a single hexagon, size N+1 is size N plus a ring of hexagons
+    let number_of_hexagons = (board_size + 1).pow(3) - board_size.pow(3);
+    let initial_dice_per_player = 12;
     let triangles_included = true;
     let triangles_hollow = true;
+    let maximum_number_of_players = if triangles_included { 6 } else { 5 };
+    let total_dice = number_of_hexagons + initial_dice_per_player * maximum_number_of_players;
     let hexagon_radius = 10.0;
     let hexagon_height = hexagon_radius * ROOT_3;
     let stroke_width = 1.0;
@@ -563,8 +567,6 @@ fn main() {
         .flatten()
         .collect();
 
-    let number_of_hexagons = (board_size + 1).pow(3) - board_size.pow(3);
-
     let triangle_information = match (triangles_included, triangles_hollow) {
         (true, true) => "hollow_triangles",
         (true, false) => "filled_triangles",
@@ -661,8 +663,18 @@ fn main() {
     let content_of_dice_qr_code_svg = include_str!("templates/template_dice_qr_code_svg.txt");
 
     let content_of_rules_page_0_svg = include_str!("templates/template_rules_page_0_svg.txt");
-    let content_of_rules_page_1_svg = include_str!("templates/template_rules_page_1_svg.txt");
-    let content_of_rules_page_2_svg = include_str!("templates/template_rules_page_2_svg.txt");
+    let content_of_rules_page_1_svg = format!(
+        include_str!("templates/template_rules_page_1_svg.txt"),
+        number_of_hexagons,
+        total_dice,
+        number_of_hexagons,
+        initial_dice_per_player,
+        maximum_number_of_players
+    );
+    let content_of_rules_page_2_svg = format!(
+        include_str!("templates/template_rules_page_2_svg.txt"),
+        initial_dice_per_player
+    );
     let content_of_rules_page_3_svg = include_str!("templates/template_rules_page_3_svg.txt");
     let content_of_rules_page_4_svg = include_str!("templates/template_rules_page_4_svg.txt");
     let content_of_rules_page_5_svg = include_str!("templates/template_rules_page_5_svg.txt");
