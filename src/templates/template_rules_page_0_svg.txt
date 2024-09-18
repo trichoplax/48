@@ -7,8 +7,9 @@
         /48
     </text>
     <text font-size="50" text-anchor="middle" fill="black">
-        <tspan x="500" y="400">A simple dice game for converting</tspan>
-        <tspan x="500" y="475">friends into enemies</tspan>
+        <tspan x="500" y="400">slashfortyeight</tspan>
+        <tspan x="500" y="475">A simple dice game for converting</tspan>
+        <tspan x="500" y="550">friends into enemies</tspan>
     </text>
     <image x="150" y="550" width="700" href="whole_board.svg"/>
 </svg>
