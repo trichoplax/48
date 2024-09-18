@@ -55,7 +55,7 @@
     </defs>
     <use href="#dice_with_pips_4" x="10%" y="113" />
     <use href="#dice_with_pips_5" x="10%" y="638" />
-    <use href="#dice_with_pips_6" x="10%" y="1013" />
+    <use href="#dice_with_pips_6" x="10%" y="938" />
     <text font-size="50" text-anchor="left" fill="black">
         <tspan x="15%" y="130" >If your move takes you off the</tspan>
         <tspan x="15%" y="205" >edge off the board (including</tspan>

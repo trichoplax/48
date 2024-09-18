@@ -11,5 +11,5 @@
         <tspan x="500" y="475">A simple dice game for converting</tspan>
         <tspan x="500" y="550">friends into enemies</tspan>
     </text>
-    <image x="150" y="550" width="700" href="whole_board.svg"/>
+    <image x="150" y="625" width="700" href="whole_board.svg"/>
 </svg>
