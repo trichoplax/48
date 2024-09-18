@@ -68,8 +68,8 @@
         <tspan x="15%" y="730" >Empty the dice tray into the</tspan>
         <tspan x="15%" y="805" >spent dice bin.</tspan>
         <tspan x="15%" y="955" >If you have no dice in your</tspan>
-        <tspan x="15%" y="1030" >cache, put your piece in the</tspan>
-        <tspan x="15%" y="1105" >spent dice bin and leave the</tspan>
+        <tspan x="15%" y="1030" >cache, turn your piece back to</tspan>
+        <tspan x="15%" y="1105" >pointy side up and leave the</tspan>
         <tspan x="15%" y="1180" >game.</tspan>
     </text>
 </svg>

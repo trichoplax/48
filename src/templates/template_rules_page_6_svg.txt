@@ -63,13 +63,12 @@
         <tspan x="15%" y="355" >your piece and all your cache</tspan>
         <tspan x="15%" y="430" >dice into the spent dice bin</tspan>
         <tspan x="15%" y="505" >and leave the game.</tspan>
-        <tspan x="15%" y="655" >If your piece is collected by</tspan>
-        <tspan x="15%" y="730" >another player, put all your</tspan>
-        <tspan x="15%" y="805" >cache dice into their cache</tspan>
-        <tspan x="15%" y="880" >and leave the game.</tspan>
-        <tspan x="15%" y="1030" >If you are the last remaining</tspan>
-        <tspan x="15%" y="1105" >player, you win!</tspan>
-        <tspan x="8%" y="1255" >Otherwise, pass the tumbler and</tspan>
-        <tspan x="8%" y="1330" >rules to the next player.</tspan>
+        <tspan x="15%" y="655" >If you collect a player's piece,</tspan>
+        <tspan x="15%" y="730" >they put all their dice into</tspan>
+        <tspan x="15%" y="805" >your cache and leave the game.</tspan>
+        <tspan x="15%" y="955" >If you are the last remaining</tspan>
+        <tspan x="15%" y="1030" >player, you win!</tspan>
+        <tspan x="8%" y="1180" >Otherwise, pass the tumbler and</tspan>
+        <tspan x="8%" y="1255" >rules to the next player.</tspan>
     </text>
 </svg>
